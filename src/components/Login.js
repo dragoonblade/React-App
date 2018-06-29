@@ -1,7 +1,8 @@
+
 import React from "react"
 import { render } from "react-dom"
 import "../css/LoginPage.css"
-class SignUp extends React.Component {
+class Login extends React.Component {
     userNameField = React.createRef();
     passwordField = React.createRef();
     loginFormSubmit = event => {
@@ -51,5 +52,21 @@ class SignUp extends React.Component {
         )
     }
 }
-export default SignUp;
+export default Login; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
