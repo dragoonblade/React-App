@@ -17,20 +17,17 @@ class Router extends React.Component {
           <Route
             exact
             path="/"
-            component={Login}
-            loggedIn={this.state.loggedIn}
+            render={()=><Login loggedIn={this.state.loggedIn}/>}
           />
           <Route
             exact
             path="/certification-details/:userId"
-            component={Certification}
-            loggedIn={this.state.loggedIn}
+            render={()=><Certification loggedIn={this.state.loggedIn}/>}
           />
           <Route
             exact
             path="/nominee-dashboard"
-            component={Dashboard}
-            loggedIn={this.state.loggedIn}
+            render={()=><Dashboard loggedIn={this.state.loggedIn}/>}
           />
           <Route component={NotFound} />
         </Switch>
