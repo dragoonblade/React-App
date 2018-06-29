@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Nominate from './Nominate'
 
 class Certification extends React.Component {
   static propTypes = {
@@ -11,6 +12,7 @@ class Certification extends React.Component {
     return (
       <div>
         <h2>Certification of {params.userId}!!!!</h2>
+          <Nominate />
       </div>
     );
   }
