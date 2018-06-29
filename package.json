@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "watch": "concurrently --names \"webpack, stylus\" --prefix name \"npm run start\" \"npm run styles:watch\"",
+    "start:dev": "serve --single ./build",
     "build": "react-scripts build"
   }
 }
