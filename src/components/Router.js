@@ -4,12 +4,20 @@ import Login from "./Login";
 import Certification from "./Certification";
 import Dashboard from "./Dashboard";
 import NotFound from "./NotFound";
+import sampleUsers from "../sampleUsers";
 
 class Router extends React.Component {
   state = {
-    loggedIn: {},
+    loggedIn: "119631",
     users: {}
   };
+
+  componentDidMount = () => {
+    this.setState({ users: sampleUsers });
+  };
+
+  getUser = key => this.state.users[key];
+
   render() {
     return (
       <BrowserRouter>
@@ -17,17 +25,36 @@ class Router extends React.Component {
           <Route
             exact
             path="/"
-            render={()=><Login loggedIn={this.state.loggedIn}/>}
+            render={() => (
+              <Login
+                loggedIn={{
+                  nominated: "self",
+                  firstName: "Julio",
+                  lastName: "Barter"
+                }}
+              />
+            )}
           />
           <Route
             exact
             path="/certification-details/:userId"
-            render={()=><Certification loggedIn={this.state.loggedIn}/>}
+            render={() => (
+              <Certification
+                loggedIn={{
+                  status: "Incomplete",
+                  nominated: "self",
+                  firstName: "Julio",
+                  lastName: "Barter"
+                }}
+              />
+            )}
           />
           <Route
             exact
             path="/nominee-dashboard"
-            render={()=><Dashboard loggedIn={this.state.loggedIn}/>}
+            render={() => (
+              <Dashboard loggedIn={this.state.users[this.state.loggedIn]} />
+            )}
           />
           <Route component={NotFound} />
         </Switch>

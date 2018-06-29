@@ -1,18 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Nominate from './Nominate'
+import Nominate from "./Nominate";
 
 class Certification extends React.Component {
   static propTypes = {
-    match: PropTypes.object
+    match: PropTypes.object,
+    loggedIn: PropTypes.object,
+    getUser: PropTypes.func
   };
 
   render() {
-    const { params } = this.props.match;
+    console.log(this.props);
+    // const {firstName, lastName} = this.props.loggedIn
     return (
-      <div>
-        <h2>Certification of {params.userId}!!!!</h2>
-          <Nominate />
+      <div className="pm-template-wrapper">
+        <Nominate loggedIn={this.props.loggedIn}/>
       </div>
     );
   }
